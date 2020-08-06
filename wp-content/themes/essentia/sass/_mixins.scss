@@ -1,0 +1,29 @@
+// Mixins
+@mixin imgreplace{
+  text-indent: -9000px;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  display: inline-block;
+}
+
+@mixin clearfix{
+  &:after{
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin paragraph($color:$darkGray){
+  font: 200 1em/1.7em $font;
+  color: $color;
+
+  &:first-child, p:first-child{
+    margin-top: 0;
+  }
+
+  &:last-child, p:last-child{
+    margin-bottom: 0;
+  }
+}
