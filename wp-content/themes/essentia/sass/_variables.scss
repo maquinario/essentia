@@ -1,0 +1,43 @@
+// Colors
+$darkBlue: #004F6C;
+$lightBlue: #55C4CF;
+$orange: #F37021;
+$yellow: #FDB913;
+$darkGray: #5B6C7E;
+
+// Font
+$bold: 700;
+$font: azo-sans-web, sans-serif;
+
+
+// Breakpoints
+
+$grid-xl: ( 
+  columns: 14,
+  gutter: 30px,
+  media: 1600px
+);
+
+$grid-lg: (
+  columns: 14,
+  gutter: 30px,
+  media: 1200px
+);
+
+$grid: (
+  columns: 12,
+  gutter: 30px,
+  media: "(min-width: 992px) and (max-width: 1199px)"
+);
+
+$grid-sm: (
+  columns: 8,
+  gutter: 30px,
+  media: "(min-width: 720px) and (max-width: 991px)"
+);
+
+$grid-xs: (
+  columns: 4,
+  gutter: 30px,
+  media: "(max-width: 719px)"
+);
