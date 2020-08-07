@@ -5,9 +5,10 @@
   "author": "Bruno Scodeler <bruno@estudiomaquinario.com.br>",
   "license": "MIT",
   "scripts": {
-    "watch" : "node-sass --watch -r wp-content/themes/essentia/sass -o wp-content/themes/essentia/ --output-style compressed --include-path sass"
+    "watch": "node-sass --watch -r wp-content/themes/essentia/sass -o wp-content/themes/essentia/ --output-style compressed --include-path sass"
   },
   "devDependencies": {
+    "git-commit-msg-linter": "^2.4.4",
     "node-sass": "^4.14.1"
   }
 }
