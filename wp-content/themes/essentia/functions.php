@@ -51,6 +51,7 @@ function create_post_type() {
         'singular_name' => __('Projeto')
       ),
       'public' => true,
+      
       'menu_icon' => 'dashicons-location',
       'hierarchical' => true,
       'has_archive' => true,
@@ -62,4 +63,5 @@ function create_post_type() {
             'thumbnail')
     )
   );
+
 }
