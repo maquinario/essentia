@@ -10,3 +10,15 @@
   <?php wp_head(); ?>
 </head>
 <body>
+
+<header>
+  <div class="container">
+    <h1 class="logo">
+      <a href="<?php bloginfo('siteurl') ?>"><?php bloginfo('name') ?></a>
+    </h1>
+    <nav class="social">
+      <?php $linkedin = get_field('linkedin', 'option'); 
+      if($linkedin): ?><a href="<?php echo $linkedin; ?>" target="_blank" rel="noreferrer noopener">Linkedin</a><?php endif; ?>
+    </nav>
+  </div>
+</header>
