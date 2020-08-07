@@ -54,6 +54,7 @@ function create_post_type() {
       'menu_icon' => 'dashicons-location',
       'hierarchical' => true,
       'has_archive' => true,
+      'show_in_rest' => true,
       'taxonomies' => array('category'),
       'supports' => array(
             'title',
