@@ -30,14 +30,15 @@ add_action( 'init', 'register_my_menus' );
 // Hide admin bar
 show_admin_bar(false);
 
-// Allow SVG upload
-function upload_svg_files($allowed) {
-    if (!current_user_can('manage_options'))
-      return $allowed;
-    $allowed['svg'] = 'image/svg+xml';
-    return $allowed;
+// Allow SVG
+function add_file_types_to_uploads($file_types){
+  $new_filetypes = array();
+  $new_filetypes['svg'] = 'image/svg+xml';
+  $file_types = array_merge($file_types, $new_filetypes );
+  return $file_types;
 }
-add_filter('upload_mimes','upload_svg_files');
+add_action('upload_mimes', 'add_file_types_to_uploads');
+
 // Custom post types
 
 
