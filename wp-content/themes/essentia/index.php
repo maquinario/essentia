@@ -1,4 +1,5 @@
-<?php get_header(); ?>
+<?php get_header();
+require_once __DIR__.'/helpers/CategoryParse.php'; ?>
 
 <?php query_posts('pagename=home'); 
 if(have_posts()):while(have_posts()):the_post(); ?>
@@ -7,10 +8,10 @@ if(have_posts()):while(have_posts()):the_post(); ?>
 <section class="bannerHome">
   <figure class="bannerHome-image">
     <?php $image = $banner['image'];
-    if($image): ?><img src="<?php echo $image['url']  ?>" alt="<?php echo $image['title'] ?>"><?php endif; ?>
+    if($image): ?><img src="<?= $image['url']  ?>" alt="<?= $image['title'] ?>"><?php endif; ?>
   </figure>
   <div class="bannerHome-content">
-    <h2 class="bannerHome-title"><?php echo $banner['title'];?></h2>
+    <h2 class="bannerHome-title"><?= $banner['title'];?></h2>
   </div>
 </section>
 
@@ -19,17 +20,17 @@ if($sustainability): ?>
 <section class="sustainabilityHome">
   <div class="container">
     <div class="sustainabilityHome-content">
-      <h2 class="sustainabilityHome-title"><?php echo $sustainability['title']; ?></h2>
+      <h2 class="sustainabilityHome-title"><?= $sustainability['title']; ?></h2>
       <div class="sustainabilityHome-text">
-        <?php echo $sustainability['text']; ?>
+        <?= $sustainability['text']; ?>
       </div>
     </div>
     <?php $sustainability_image = $sustainability['image']; 
     if($sustainability_image): ?>
       <figure class="sustainability-image">
         <img
-          src="<?php echo $sustainability_image['url']  ?>"
-          alt="<?php echo $sustainability_image['title'] ?>"
+          src="<?= $sustainability_image['url']  ?>"
+          alt="<?= $sustainability_image['title'] ?>"
         >
       </figure>
     <?php endif; ?>
@@ -56,7 +57,6 @@ if($sustainability): ?>
             <p class="statistic-description">
               <?php the_sub_field('description'); ?>
             </p>
-
           </li>
         <?php endwhile; ?>
       </ul>
@@ -64,10 +64,9 @@ if($sustainability): ?>
   </div>
 </section>
 <?php endif; ?>
-
-
-
 <?php endwhile; endif; ?>
+
+<?php get_template_part('components/map'); ?>
 
 
 <?php get_footer() ?>
