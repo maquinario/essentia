@@ -1,5 +1,5 @@
 /*!
-  Theme Name: BoaCompra
+  Theme Name: Essentia Energia
   Author: Bruno Scodeler
   Author URI: http://estudiomaquinario.com.br/
   Description: Site institucional da Essentia Energia
@@ -11,8 +11,13 @@
   * Documentation available at http://neat.bourbon.io/
 **/
 
+@import 'neat/neat';
+
 @import '_variables';
 @import 'mixins';
 @import 'components';
 @import 'structure';
+
+// Pages
+@import 'home';
 

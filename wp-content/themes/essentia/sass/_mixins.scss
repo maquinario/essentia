@@ -27,3 +27,14 @@
     margin-bottom: 0;
   }
 }
+
+@mixin imageClip($image){
+  -webkit-mask-image: url($image);
+  mask-image: url($image);
+  -webkit-mask-position: bottom center;
+  mask-position: bottom center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
