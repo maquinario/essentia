@@ -68,5 +68,39 @@ if($sustainability): ?>
 
 <?php get_template_part('components/map'); ?>
 
+<?php $projects = get_posts(array(
+  'post_type' => 'projetos' 
+)); ?>
+
+<?php query_posts('pagename=projetos'); if(have_posts()): ?>
+<section class="projectsHome">
+  <div class="container">
+    <?php while(have_posts()):the_post(); ?>
+      <div class="projectsHome-content">
+        <h2 class="projectsHome-title"><?php the_title(); ?></h2>
+        <div class="projectsHome-text">
+          <?php the_field('home_text'); ?>
+        </div>
+      </div>
+    <?php endwhile; ?>
+    <div class="projectsHome-featuredProjects">
+      <?php foreach($projects as $project):
+        $projectCategories = new CategoryParse(get_the_category($project->ID));  ?>
+        <div class="projectHome-item">
+          <div class="projectHome-content">
+            <span class="projectHome-label"><?= $projectCategories->returnCategoriesAsText(); ?></span>
+            <h3 class="projectHome"><?= get_the_title($project->ID); ?></h3>
+            <span class="projectHome-location"><?= get_field('location', $project->ID); ?></span>
+          </div>
+          <figure class="projectHome-thumb">
+            <img src="<?= get_the_post_thumbnail_url($project->ID); ?>" alt="">
+          </figure>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+<?php endif; ?>
+
 
 <?php get_footer() ?>
