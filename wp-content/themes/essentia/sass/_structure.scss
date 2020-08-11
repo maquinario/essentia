@@ -1,5 +1,9 @@
+*{
+  box-sizing: border-box;
+}
+
 body{
-  font: 1em $font;
+  font: 18px $font;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; 
@@ -19,17 +23,19 @@ button{
 header{
   padding: 20px 0;
   background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-  }
+.container{
+  @include grid-container;
 }
 
 .logo{
   @include grid-column(3);
+  @include grid-push(1);
   a{
     @include imgreplace;
     background:url(img/logo.svg) top left no-repeat;

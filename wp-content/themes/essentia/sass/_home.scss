@@ -1,5 +1,7 @@
 .home{
   background-image: linear-gradient(to right, rgba($lightBlue, .2), #fff);
+  position: relative;
+  padding-bottom: 80px;
 }
 
 .bannerHome{
@@ -12,6 +14,7 @@
 
 .bannerHome-title{
   @include grid-column(6);
+  @include grid-push(1);
   font-size: 3em;
   color: $darkBlue;
   margin-bottom: 20%;
@@ -47,3 +50,93 @@
     object-position: center;
   }
 }
+
+.sustainabilityHome{
+  padding: 80px 0;
+}
+
+.sustainabilityHome-content{
+  @include grid-column(5);
+  @include grid-push(1);
+  position: relative;
+  z-index: 1;
+}
+
+.sustainabilityHome-title{
+  font: $bold 2.5em $font;
+  color: $darkBlue;
+}
+
+.sustainability-image{
+  @include grid-column(4);
+  @include grid-push(1);
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.sustainability-bg{
+  position: absolute;
+  margin: 0;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  z-index: 0;
+  @include imageClip('img/shapeHome.svg');
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: bottom right;
+  mask-position: bottom right;
+  background-image: linear-gradient(to right, $lightBlue, $darkBlue);
+
+  img{
+    width: 100%;
+    opacity: .15;
+  }
+}
+
+.statistics-container{
+  @include grid-column(10);
+  @include grid-push(1);
+  position: relative;
+  z-index: 1;
+  clear: both;
+}
+
+.statistics-list{
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  @include grid-container;
+  @include grid-collapse;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.statistic{
+  @include grid-column(3);
+  padding: 40px 20px;
+  text-align: center;
+  list-style: none;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 3px 6px rgba(0,0,0,.15);
+}
+
+.statistic-icon{
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.statistic-title{
+  font: $bold 2em $font;
+  color: $darkBlue;
+  margin: 0 0 20px;
+}
+
+.statistic-description{
+  color: rgba($darkBlue, .7);
+  margin: 0;
+}
+

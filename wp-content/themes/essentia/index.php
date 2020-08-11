@@ -36,6 +36,12 @@ require_once __DIR__.'/helpers/CategoryParse.php'; ?>
           >
         </figure>
       <?php endif; ?>
+      <?php $sustainability_bg = $sustainability['bg_image'];
+      if($sustainability_bg): ?>
+        <figure class="sustainability-bg">
+          <img src="<?= $sustainability_bg; ?>">
+        </figure>
+      <?php endif; ?>
     </div>
   </section>
   <?php endif; ?>
