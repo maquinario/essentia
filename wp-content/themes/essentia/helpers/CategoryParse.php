@@ -12,4 +12,12 @@ class CategoryParse {
     $class_names = implode(' ', $categories_array);
     return $class_names;
   }
+  function returnCategoriesAsText(){
+    $categories_array = [];
+    foreach($this->categories as $category){
+      array_push($categories_array, $category->name);
+    }
+    $class_titles = implode(' ', $categories_array);
+    return $class_titles;
+  }
 }
