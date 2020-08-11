@@ -14,11 +14,11 @@
 <header>
   <div class="container">
     <h1 class="logo">
-      <a href="<?php bloginfo('siteurl') ?>"><?php bloginfo('name') ?></a>
+      <a href="<?php site_url(); ?>"><?php bloginfo('name') ?></a>
     </h1>
     <nav class="social">
       <?php $linkedin = get_field('linkedin', 'option'); 
-      if($linkedin): ?><a href="<?= $linkedin; ?>" target="_blank" rel="noreferrer noopener">Linkedin</a><?php endif; ?>
+      if($linkedin): ?><a href="<?= $linkedin; ?>" target="_blank" class="icon-linkedin" rel="noreferrer noopener">Linkedin</a><?php endif; ?>
     </nav>
   </div>
 </header>
