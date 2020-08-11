@@ -100,7 +100,9 @@ if($sustainability): ?>
     </div>
   </div>
 </section>
-<?php endif; ?>
+<?php endif; wp_reset_query(); ?>
+
+<?php get_template_part('components/contact_form'); ?>
 
 
 <?php get_footer() ?>
