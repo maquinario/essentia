@@ -63,8 +63,7 @@
 }
 
 .sustainabilityHome-title{
-  font: $bold 2.5em $font;
-  color: $darkBlue;
+  @include title($darkBlue);
 }
 
 .sustainability-image{
@@ -137,6 +136,83 @@
 
 .statistic-description{
   color: rgba($darkBlue, .7);
+  margin: 0;
+}
+
+.map{
+  padding: 50px 0;
+}
+
+.map-container{
+  width: 100%;
+  height: 550px;
+}
+
+.map-title{
+  text-align: center;
+  @include title;
+}
+
+.map-wrapper{
+  position: relative;
+}
+
+.map-projects{
+  @include grid-column(10);
+  position: absolute;
+  margin: 0;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 20px;
+  padding: 0 30px;
+}
+
+.map-list{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.map-item{
+  padding: 30px 20px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+
+  &:not(:last-child){
+    margin-right: 30px;
+  }
+
+  &.eolica {
+    .map-icon{ background-image: url(img/iconEolic-blue.svg); }
+  }
+
+  &.solar{
+    .map-icon { background-image: url(img/iconSolar-blue.svg);}
+  }
+}
+
+.map-icon{
+  width: 45px;
+  height: 45px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-right: 20px;
+}
+
+.map-itemTitle{
+  font: $bold 1.2em $font;
+  color: $darkBlue;
+  margin: 0 0 5px;
+}
+
+.map-itemLocation{
+  font: 0.9em $font;
+  color: $darkBlue;
   margin: 0;
 }
 

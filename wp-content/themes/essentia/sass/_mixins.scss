@@ -38,3 +38,8 @@
   mask-size: cover;
   -webkit-mask-size: cover;
 }
+
+@mixin title($color: $darkBlue){
+  font: $bold 2.5em $font;
+  color: $color;
+}
