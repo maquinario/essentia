@@ -58,3 +58,87 @@ header{
   background: url(img/linkedin.svg) center no-repeat;
   background-size: contain;
 }
+
+footer{
+  padding: 80px 0;
+  background-image: linear-gradient(to right, $darkBlue, $lightBlue);
+}
+
+.footer-logo{
+  @include grid-column(3);
+  @include grid-push(1);
+  @include imgreplace;
+  background: url(img/logo_white.svg) top left no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 45px;
+}
+
+.footer-menu{
+  @include grid-column(5);
+}
+
+.footer-contact{
+  @include grid-column(3);
+  margin-bottom: 40px;
+  margin-top: 0;
+  padding: 0;
+}
+
+.footer-contactInfo {
+  list-style: none;
+  display: flex;
+  color: #fff;
+  margin-bottom: 20px;
+
+  & > i{
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    margin-right: 15px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  p {
+    margin: 0;
+    flex: 1;
+    font: 1em $font;
+    line-height: 1.5;
+  }
+}
+
+.contactIcon-phone{ background-image: url(img/iconPhone.svg);}
+.contactIcon-email{ background-image: url(img/iconEmail.svg);}
+.contactIcon-address{ background-image: url(img/iconLocation.svg);}
+
+.copyright{
+  @include grid-column(5);
+  @include grid-push(1);
+  color: #fff;
+
+  p{ margin-bottom: 0; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg) }
+  to { transform: rotate(360deg) }
+}
+
+.signature{
+  @include grid-column(5);
+  text-align: right;
+
+  a{
+    @include imgreplace;
+    background: url(img/maquinario.svg) center no-repeat;
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+
+    &:hover{
+      animation: spin infinite linear 2s;
+    }
+  }
+}
