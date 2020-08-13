@@ -15,7 +15,7 @@
   }
 }
 
-@mixin paragraph($color:$darkGray){
+@mixin paragraph($color:rgba($darkBlue, .7)){
   font: 200 1em/1.7em $font;
   color: $color;
 

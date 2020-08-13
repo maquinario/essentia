@@ -93,19 +93,21 @@ require_once __DIR__.'/helpers/CategoryParse.php'; ?>
       </div>
     <?php endwhile; ?>
     <div class="projectsHome-featuredProjects">
-      <?php foreach($projects as $project):
-        $projectCategories = new CategoryParse(get_the_category($project->ID));  ?>
-        <div class="projectHome-item">
-          <div class="projectHome-content">
-            <span class="projectHome-label"><?= $projectCategories->returnCategoriesAsText(); ?></span>
-            <h3 class="projectHome"><?= get_the_title($project->ID); ?></h3>
-            <span class="projectHome-location"><?= get_field('location', $project->ID); ?></span>
+      <div class="projectsHome-featuredWrap">
+        <?php foreach($projects as $project):
+          $projectCategories = new CategoryParse(get_the_category($project->ID));  ?>
+          <div class="projectHome-item">
+            <div class="projectHome-content">
+              <span class="projectHome-label"><?= $projectCategories->returnCategoriesAsText(); ?></span>
+              <h3 class="projectHome-title"><?= get_the_title($project->ID); ?></h3>
+              <span class="projectHome-location"><?= get_field('location', $project->ID); ?></span>
+            </div>
+            <figure class="projectHome-thumb">
+              <img src="<?= get_the_post_thumbnail_url($project->ID); ?>" alt="">
+            </figure>
           </div>
-          <figure class="projectHome-thumb">
-            <img src="<?= get_the_post_thumbnail_url($project->ID); ?>" alt="">
-          </figure>
-        </div>
-      <?php endforeach; ?>
+        <?php endforeach; ?>
+      </div>
     </div>
   </div>
 </section>
