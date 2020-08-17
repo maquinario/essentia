@@ -20,6 +20,11 @@
   margin-bottom: 20%;
   position: relative;
   z-index: 1;
+
+  @include grid-media($grid-lg){
+    @include grid-column(6);
+    @include grid-push(2);
+  }
 }
 
 .bannerHome-image{
@@ -60,6 +65,11 @@
   @include grid-push(1);
   position: relative;
   z-index: 1;
+
+  @include grid-media($grid-lg){
+    @include grid-column(5);
+    @include grid-push(2);
+  }
 }
 
 .sustainabilityHome-title{
@@ -73,6 +83,11 @@
   overflow: hidden;
   position: relative;
   z-index: 1;
+
+  @include grid-media($grid-lg){
+    @include grid-column(4);
+    @include grid-push(1);
+  }
 }
 
 .sustainability-bg{
@@ -101,6 +116,11 @@
   position: relative;
   z-index: 1;
   clear: both;
+
+  @include grid-media($grid-lg){
+    @include grid-column(10);
+    @include grid-push(2);
+  }
 }
 
 .statistics-list{
@@ -167,6 +187,10 @@
   background: #fff;
   border-radius: 20px;
   padding: 0 30px;
+
+  @include grid-media($grid-lg){
+    @include grid-column(8);
+  }
 }
 
 .map-list{
@@ -242,6 +266,11 @@
 .projectsHome-content{
   @include grid-column(3);
   @include grid-push(1);
+
+  @include grid-media($grid-lg){
+    @include grid-column(3);
+    @include grid-push(2);
+  }
 }
 
 .projectsHome-title{
@@ -256,6 +285,11 @@
 .projectsHome-featuredProjects{
   @include grid-column(6);
   @include grid-push(1);
+
+  @include grid-media($grid-lg){
+    @include grid-column(6);
+    @include grid-push(1);
+  }
 }
 
 .projectsHome-featuredWrap{

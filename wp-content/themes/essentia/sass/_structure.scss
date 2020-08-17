@@ -36,6 +36,12 @@ header{
 .logo{
   @include grid-column(3);
   @include grid-push(1);
+
+  @include grid-media($grid-lg){
+    @include grid-column(3);
+    @include grid-push(2);
+  }
+
   a{
     @include imgreplace;
     background:url(img/logo.svg) top left no-repeat;
@@ -72,10 +78,19 @@ footer{
   background-size: contain;
   width: 200px;
   height: 45px;
+
+  @include grid-media($grid-lg){
+    @include grid-column(3);
+    @include grid-push(2);
+  }
 }
 
 .footer-menu{
   @include grid-column(5);
+
+  @include grid-media($grid-lg){
+    @include grid-column(5);
+  }
 }
 
 .footer-contact{
@@ -83,6 +98,10 @@ footer{
   margin-bottom: 40px;
   margin-top: 0;
   padding: 0;
+
+  @include grid-media($grid-lg){
+    @include grid-column(3);
+  }
 }
 
 .footer-contactInfo {
@@ -118,6 +137,11 @@ footer{
   @include grid-push(1);
   color: #fff;
 
+  @include grid-media($grid-lg){
+    @include grid-column(5);
+    @include grid-push(2);
+  }
+
   p{ margin-bottom: 0; }
 }
 
@@ -129,6 +153,10 @@ footer{
 .signature{
   @include grid-column(5);
   text-align: right;
+
+  @include grid-media($grid-lg){
+    @include grid-column(6);
+  }
 
   a{
     @include imgreplace;

@@ -16,10 +16,10 @@
       <li class="footer-contactInfo contact-address">
         <i class="contactIcon-address"></i>
         <?php $address = get_field('address', 'option'); ?>
-        <p><?= $address['street']; ?></p>
-        <p><?= $address['address_detail']; ?></p>
-        <p><?= $address['neighborhood']; ?>, <?= $address['city']; ?> - <?= $address['state']; ?></p>
-        <p>CEP <?= $address['zipcode']; ?></p>
+        <p><?= $address['street']; ?><br>
+        <?= $address['address_detail']; ?><br>
+        <?= $address['neighborhood']; ?>, <?= $address['city']; ?> - <?= $address['state']; ?><br>
+        CEP <?= $address['zipcode']; ?></p>
       </li>
     </ul>
 
