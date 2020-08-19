@@ -42,4 +42,8 @@
 @mixin title($color: $darkBlue){
   font: $bold 2.5em $font;
   color: $color;
+
+  @include grid-media($grid-xs){
+    font-size: 2em;
+  }
 }

@@ -42,6 +42,16 @@ header{
     @include grid-push(2);
   }
 
+  @include grid-media($grid-sm){
+    @include grid-column(3);
+    @include grid-push(0);
+  }
+
+  @include grid-media($grid-xs){
+    @include grid-column(3);
+    @include grid-push(0);
+  }
+
   a{
     @include imgreplace;
     background:url(img/logo.svg) top left no-repeat;
@@ -55,6 +65,10 @@ header{
   @include grid-column(2);
   margin-right: 30px;
   text-align: right;
+
+  @include grid-media($grid-xs){
+    @include grid-column(1);
+  }
 }
 
 .icon-linkedin{
@@ -68,6 +82,10 @@ header{
 footer{
   padding: 80px 0;
   background-image: linear-gradient(to right, $darkBlue, $lightBlue);
+
+  @include grid-media($grid-xs){
+    display: none;
+  }
 }
 
 .footer-logo{
@@ -83,6 +101,13 @@ footer{
     @include grid-column(3);
     @include grid-push(2);
   }
+
+  @include grid-media($grid-sm){
+    @include grid-column(4);
+    @include grid-push(2);
+    background-position: center;
+    margin-bottom: 40px;
+  }
 }
 
 .footer-menu{
@@ -90,6 +115,10 @@ footer{
 
   @include grid-media($grid-lg){
     @include grid-column(5);
+  }
+
+  @include grid-media($grid-sm){
+    display: none
   }
 }
 
@@ -101,6 +130,10 @@ footer{
 
   @include grid-media($grid-lg){
     @include grid-column(3);
+  }
+
+  @include grid-media($grid-sm){
+    display: none;
   }
 }
 
@@ -132,6 +165,19 @@ footer{
 .contactIcon-email{ background-image: url(img/iconEmail.svg);}
 .contactIcon-address{ background-image: url(img/iconLocation.svg);}
 
+.patria{
+  text-align: center;
+  @include grid-column(6);
+  @include grid-push(3);
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  img{
+    max-width: 350px;
+    height: auto;
+  }
+}
+
 .copyright{
   @include grid-column(5);
   @include grid-push(1);
@@ -140,6 +186,13 @@ footer{
   @include grid-media($grid-lg){
     @include grid-column(5);
     @include grid-push(2);
+  }
+
+  @include grid-media($grid-sm){
+    @include grid-column(6);
+    @include grid-push(1);
+    text-align: center;
+    margin-bottom: 40px;
   }
 
   p{ margin-bottom: 0; }
@@ -156,6 +209,12 @@ footer{
 
   @include grid-media($grid-lg){
     @include grid-column(6);
+  }
+
+  @include grid-media($grid-sm){
+    @include grid-column(6);
+    @include grid-push(1);
+    text-align: center;
   }
 
   a{
