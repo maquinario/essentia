@@ -23,6 +23,10 @@
       </li>
     </ul>
 
+    <div class="patria">
+      <img src="<?php bloginfo('template_url'); ?>/img/patria-blackstone.png" alt="Pátria - in partnership with Blackstone">
+    </div>
+
     <div class="copyright">
       <p>Essentia Energia &copy; 2020.  Todos os direitos reservados</p>
     </div>
