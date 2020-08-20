@@ -90,7 +90,6 @@ footer{
 
 .footer-logo{
   @include grid-column(3);
-  @include grid-push(1);
   @include imgreplace;
   background: url(img/logo_white.svg) top left no-repeat;
   background-size: contain;
@@ -99,7 +98,7 @@ footer{
 
   @include grid-media($grid-lg){
     @include grid-column(3);
-    @include grid-push(2);
+    @include grid-push(1);
   }
 
   @include grid-media($grid-sm){
@@ -117,19 +116,30 @@ footer{
     @include grid-column(5);
   }
 
+  text-align: center;
+  color: #fff;
+
   @include grid-media($grid-sm){
-    display: none
+    @include grid-column(8);
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  > a {
+    text-decoration: none;
+    color: inherit;
   }
 }
 
 .footer-contact{
-  @include grid-column(3);
+  @include grid-column(4);
   margin-bottom: 40px;
   margin-top: 0;
   padding: 0;
+  font-size: 0.9em;
 
   @include grid-media($grid-lg){
-    @include grid-column(3);
+    @include grid-column(4);
   }
 
   @include grid-media($grid-sm){
@@ -226,6 +236,71 @@ footer{
 
     &:hover{
       animation: spin infinite linear 2s;
+    }
+  }
+}
+
+.page{
+  padding: 80px 0;
+}
+
+.page-content{
+  @include grid-column(8);
+  @include grid-push(2);
+
+  @include grid-media($grid-sm){
+    @include grid-column(8);
+    @include grid-push(0);
+  }
+
+  @include grid-media($grid-xs){
+    @include grid-column(4);
+    @include grid-push(0);
+  }
+}
+
+.page-title{
+  @include title;
+  margin: 0 0 40px;
+}
+
+.page-text{
+  @include paragraph;
+
+  .wp-block-separator{
+    margin: 50px 0;
+    border: 0;
+    border-bottom: solid 1px $lightBlue;
+  }
+
+  h3:not(:first-child){
+    margin-top: 40px;
+    color: $darkBlue;
+  }
+
+  a[href^="http"]{
+    color: $darkBlue;
+  }
+
+  a[href$=".pdf"]{
+    color: $darkBlue;
+    padding: 10px 20px;
+    font: $bold 0.9em $font;
+    text-decoration: none;
+    border: solid 1px rgba($darkBlue, 0.2);
+    border-radius: 5px;
+    background: rgba($darkBlue, 0.05);
+    margin-bottom: 10px;
+    display: inline-flex;
+
+    &:before{
+      content: '';
+      background: url(img/iconPdf-lightBlue.svg) top center no-repeat;
+      background-size: contain;
+      width: 25px;
+      height: 25px;
+      display: inline-block;
+      margin-right: 15px;
     }
   }
 }
