@@ -16,6 +16,10 @@
   }
 }
 
+.bannerHome-content{
+  width: 100%;
+}
+
 .bannerHome-title{
   @include grid-column(6);
   @include grid-push(1);
@@ -59,11 +63,10 @@
   &:after{
     content: '';
     background-image: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0));
-    height: 30%;
+    height: 50%;
     position: absolute;
     top: 0;
     left: 0;
-    height: 30%;
     width: 100%;
   }
 
@@ -108,6 +111,10 @@
 
 .sustainabilityHome-title{
   @include title($darkBlue);
+}
+
+.sustainabilityHome-text{
+  @include paragraph;
 }
 
 .sustainability-image{
