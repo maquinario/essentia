@@ -2,7 +2,7 @@
   <div class="container">
     <h2 class="footer-logo"><?php bloginfo('name'); ?></h2>
     <nav class="footer-menu">
-      <a href="<?php site_url(); ?>/etica-e-integridade">Ética e Integridade</a>
+      <a href="<?= site_url(); ?>/etica-e-integridade">Ética e Integridade</a>
     </nav>
     <ul class="footer-contact">
       <li class="footer-contactInfo contact-phone">

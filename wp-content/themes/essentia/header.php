@@ -13,7 +13,7 @@
 
 <header>
   <h1 class="logo">
-    <a href="<?php site_url(); ?>"><?php bloginfo('name') ?></a>
+    <a href="<?= site_url(); ?>"><?php bloginfo('name') ?></a>
   </h1>
   <nav class="social">
     <?php $linkedin = get_field('linkedin', 'option'); 
