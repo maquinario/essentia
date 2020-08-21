@@ -2,7 +2,7 @@
   <div class="container">
     <h2 class="footer-logo"><?php bloginfo('name'); ?></h2>
     <nav class="footer-menu">
-      <a href="http://essentiaenergia.com.br/wp-content/uploads/2020/08/Essentia_Cartilha-Etica.pdf" target="_blank">Ética e Integridade</a>
+      <a href="<?php site_url(); ?>/etica-e-integridade">Ética e Integridade</a>
     </nav>
     <ul class="footer-contact">
       <li class="footer-contactInfo contact-phone">
