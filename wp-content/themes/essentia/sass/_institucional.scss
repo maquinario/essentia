@@ -1,0 +1,84 @@
+.aboutChildren{
+  padding: 0 0 80px;
+  background: url(img/institucional-bg.jpg) center no-repeat $darkBlue;
+  background-size: cover;
+}
+
+.aboutChildren-items{
+  @include grid-column(10);
+  @include grid-push(1);
+}
+
+.aboutChildren-list{
+  @include grid-container;
+  @include grid-collapse;
+  margin-top: -40px;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.aboutCard{
+  @include grid-column(5 of 10, $grid);
+  list-style: none;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.aboutCard-image{
+  height: 160px;
+  margin: 0;
+  position: relative;
+
+  &:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $darkBlue;
+    opacity: 0.8;
+  }
+
+  img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    z-index: 0;
+  }
+}
+
+.aboutCard-title{
+  position: absolute;
+  left: 40px;
+  bottom: 30px;
+  z-index: 2;
+  color: #fff;
+  font: $bold 1.4em $font;
+  margin: 0;
+}
+
+.aboutCard-content{
+  background: #fff;
+  padding: 30px 40px;
+  @include paragraph;
+}
+
+$colors: #55C4CF, #F37021, #004F6C, #FDB913;
+@for $i from 1 through 4 {
+  $color: nth($colors, $i);
+  .aboutCard:nth-child(#{$i}n){
+    .aboutCard-image {
+      &:after{
+        background-color: $color;
+      }
+    }
+  }
+}
+
