@@ -159,3 +159,18 @@
   }
 }
 
+.pageHeadline{
+  padding: 120px 0; 
+  background: url(img/pageHeadline-shape.svg) no-repeat;
+  background-size: auto 70%;
+  background-position: -40% bottom;
+}
+
+.pageHeadline-text{
+  font: italic 1.6em $font;
+  color: $darkBlue;
+  text-align: center;
+  @include grid-column(8);
+  @include grid-push(2);
+}
+
