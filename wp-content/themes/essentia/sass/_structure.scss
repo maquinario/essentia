@@ -34,6 +34,8 @@ header{
 }
 
 .logo{
+  margin-top: 0;
+  margin-bottom: 0;
   @include grid-column(3);
   @include grid-push(1);
 

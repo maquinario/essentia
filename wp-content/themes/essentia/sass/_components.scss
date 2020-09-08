@@ -1,5 +1,3 @@
-
-
 .submitBtn{
   font: 1em $font;
   color: #fff;
@@ -108,6 +106,56 @@
 
   &.is-active{
     display: block !important;
+  }
+}
+
+.pageBanner{
+  background-image: linear-gradient(to right, rgba($lightBlue, .1), transparent);
+  position: relative;
+
+  &:after{
+    content: '';
+    background-image: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0));
+    height: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+
+.pageBanner-content{
+  @include grid-column(4);
+  @include grid-push(1);
+  padding: 120px 0 80px;
+  position: relative;
+  z-index: 9;
+}
+
+.pageBanner-title{
+  @include title;
+}
+
+.pageBanner-text{
+  @include paragraph;
+
+  h3{
+    color: $lightBlue;
+  }
+}
+
+.pageBanner-image{
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: calc(100% + 80px);
+  width: 40%;
+
+  img{
+    height: 100%;
+    position: relative;
+    @include imageClip('img/pageBanner-shape.svg')
   }
 }
 
