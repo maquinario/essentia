@@ -13,12 +13,12 @@ if(have_posts()): ?>
       <div class="aboutChildren-items">
         <ul class="aboutChildren-list">
           <?php while(have_posts()):the_post(); ?>
-            <li class="aboutCard">
-              <figure class="aboutCard-image">
+            <li class="card">
+              <figure class="card-image">
                 <?php the_post_thumbnail(); ?>
-                <h4 class="aboutCard-title"><?php the_title(); ?></h4>
+                <h4 class="card-title over-image"><?php the_title(); ?></h4>
               </figure>
-              <div class="aboutCard-content">
+              <div class="card-content">
                 <?php the_content(); ?>
               </div>
             </li>
