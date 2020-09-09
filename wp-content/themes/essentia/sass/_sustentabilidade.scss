@@ -1,0 +1,77 @@
+.benefits{
+  padding: 80px 0;
+  background: url(img/institucional-bg.jpg) center no-repeat $darkBlue;
+  background-size: cover;
+}
+
+.benefits-items{
+  @include grid-column(10);
+  @include grid-push(1);
+}
+
+.benefits-list{
+  @include grid-container;
+  @include grid-collapse;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  .card {
+    @include grid-column(3 of 9, $grid);
+  }
+}
+
+.sustainabilityActions{
+  padding: 80px 0;
+  background-image: linear-gradient(to right, rgba($lightBlue, .1), transparent);
+}
+
+.sustainabilityActions-title{
+  @include grid-column(10);
+  @include grid-push(1);
+  @include title;
+  text-align: center;
+}
+
+.sustainabilityActions-content{
+  @include grid-column(4, $grid);
+  @include grid-push(1);
+  @include paragraph;
+}
+
+.sustainabilityActions-list{
+  @include grid-column(6, $grid);
+  background: $darkBlue;
+  color: #fff;
+  font-size: 0.9em;
+  line-height: 2;
+  padding: 30px;
+  border-radius: 10px;
+
+  ul{
+    margin: 0;
+  }
+}
+
+.textBlocks{
+  margin: 40px 0;
+  background: url(img/sustainability-shape.svg) left center no-repeat;
+  background-size: contain;
+}
+
+.textBlock{
+  padding: 50px 0;
+}
+
+.textBlock-title{
+  @include grid-column(10);
+  @include grid-push(1);
+  @include title;
+  text-align: center;
+}
+
+.textBlock-content{
+  @include grid-column(8);
+  @include grid-push(2);
+  @include paragraph;
+}
