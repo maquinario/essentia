@@ -175,11 +175,12 @@
 }
 
 .card{
-  @include grid-column(5 of 10, $grid);
   list-style: none;
   margin-bottom: 30px;
   border-radius: 20px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-image{
@@ -230,6 +231,9 @@
   background: #fff;
   padding: 30px 40px;
   @include paragraph;
+  flex: 1;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 $colors: #55C4CF, #F37021, #004F6C, #FDB913;
