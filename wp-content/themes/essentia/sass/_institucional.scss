@@ -1,15 +1,15 @@
-.aboutChildren{
+.aboutChildren {
   padding: 0 0 80px;
   background: url(img/institucional-bg.jpg) center no-repeat $darkBlue;
   background-size: cover;
 }
 
-.aboutChildren-items{
+.aboutChildren-items {
   @include grid-column(10);
   @include grid-push(1);
 }
 
-.aboutChildren-list{
+.aboutChildren-list {
   @include grid-container;
   @include grid-collapse;
   margin-top: -40px;
@@ -20,5 +20,9 @@
 
   & > .card {
     @include grid-column(5 of 10, $grid);
+
+    @include grid-media($grid-sm) {
+      @include grid-column(6 of 6);
+    }
   }
 }

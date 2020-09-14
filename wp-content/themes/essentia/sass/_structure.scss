@@ -37,16 +37,11 @@ header {
   margin-top: 0;
   margin-bottom: 0;
   @include grid-column(3);
-  @include grid-push(1);
-
-  @include grid-media($grid-lg) {
-    @include grid-column(3);
-    @include grid-push(2);
-  }
 
   @include grid-media($grid-sm) {
-    @include grid-column(3);
+    @include grid-column(8);
     @include grid-push(0);
+    margin-bottom: 20px;
   }
 
   @include grid-media($grid-xs) {
@@ -60,13 +55,28 @@ header {
     background-size: contain;
     width: 240px;
     height: 55px;
+
+    @include grid-media($grid-sm) {
+      margin: 0 auto;
+      display: block;
+      width: 200px;
+      height: 50px;
+    }
   }
 }
 
 .navigation {
+  @include grid-column(7);
+
+  @include grid-media($grid-sm) {
+    @include grid-column(6);
+  }
+
   .menu {
     display: flex;
     flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
   }
 
   .menu-item {
@@ -99,12 +109,16 @@ header {
 }
 
 .social {
-  @include grid-column(2);
+  @include grid-column(1);
   margin-right: 30px;
   text-align: right;
 
   @include grid-media($grid-xs) {
     @include grid-column(1);
+  }
+
+  @include grid-media($grid-sm) {
+    @include grid-column(2);
   }
 }
 

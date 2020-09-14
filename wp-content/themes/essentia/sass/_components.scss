@@ -129,6 +129,17 @@
     top: 0;
     left: 0;
     width: 100%;
+
+    @include grid-media($grid-sm) {
+      display: none;
+    }
+  }
+
+  @include grid-media($grid-sm) {
+    .container {
+      display: flex;
+      flex-direction: column-reverse;
+    }
   }
 }
 
@@ -138,6 +149,13 @@
   padding: 120px 0 80px;
   position: relative;
   z-index: 9;
+
+  @include grid-media($grid-sm) {
+    @include grid-column(8);
+    @include grid-push(0);
+    margin-bottom: 20px;
+    padding: 40px 0;
+  }
 }
 
 .pageBanner-title {
@@ -164,10 +182,22 @@
   height: calc(100% + 80px);
   width: 40%;
 
+  @include grid-media($grid-sm) {
+    width: 100%;
+    height: 300px;
+    position: static;
+  }
+
   img {
     height: 100%;
     position: relative;
     @include imageClip("img/pageBanner-shape.svg");
+
+    @include grid-media($grid-sm) {
+      width: 100%;
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
   }
 }
 

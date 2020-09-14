@@ -5,8 +5,23 @@
 .projects-featuredProjects {
   @include grid-column(10);
   @include grid-push(1);
+
   .cardProject {
     @include grid-column(5 of 10);
+
+    @include grid-media($grid-sm) {
+      @include grid-column(8);
+      @include grid-push(0);
+    }
+
+    @include grid-media($grid-xs) {
+      @include grid-column(4);
+      @include grid-push(0);
+
+      &:nth-child(odd) {
+        @include grid-push(0);
+      }
+    }
   }
 }
 
@@ -26,15 +41,6 @@
 
   &:nth-child(odd) {
     background-color: $lightBlue;
-  }
-
-  @include grid-media($grid-xs) {
-    @include grid-column(4);
-    @include grid-push(0);
-
-    &:nth-child(odd) {
-      @include grid-push(0);
-    }
   }
 }
 
