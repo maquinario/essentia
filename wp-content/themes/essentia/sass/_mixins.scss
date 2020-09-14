@@ -1,5 +1,5 @@
 // Mixins
-@mixin imgreplace{
+@mixin imgreplace {
   text-indent: -9000px;
   overflow: hidden;
   font-size: 0;
@@ -7,43 +7,45 @@
   display: inline-block;
 }
 
-@mixin clearfix{
-  &:after{
+@mixin clearfix {
+  &:after {
     content: "";
     display: table;
     clear: both;
   }
 }
 
-@mixin paragraph($color:rgba($darkBlue, .7)){
+@mixin paragraph($color: rgba($darkBlue, 0.7)) {
   font: 200 1em/1.7em $font;
   color: $color;
 
-  &:first-child, p:first-child{
+  &:first-child,
+  p:first-child {
     margin-top: 0;
   }
 
-  &:last-child, p:last-child{
+  &:last-child,
+  p:last-child {
     margin-bottom: 0;
   }
 }
 
-@mixin imageClip($image){
+@mixin imageClip($image) {
   -webkit-mask-image: url($image);
   mask-image: url($image);
-  -webkit-mask-position: bottom center;
-  mask-position: bottom center;
+  -webkit-mask-position: top center;
+  mask-position: top center;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  mask-size: cover;
-  -webkit-mask-size: cover;
+  mask-size: contain;
+  -webkit-mask-size: contain;
 }
 
-@mixin title($color: $darkBlue){
+@mixin title($color: $darkBlue) {
   font: $bold 2.5em $font;
   color: $color;
 
-  @include grid-media($grid-xs){
+  @include grid-media($grid-xs) {
     font-size: 2em;
   }
 }
