@@ -1,26 +1,26 @@
-*{
+* {
   box-sizing: border-box;
 }
 
-body{
+body {
   font: 18px $font;
   margin: 0;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; 
+  -moz-osx-font-smoothing: grayscale;
 }
 
-figure{
-  img{
+figure {
+  img {
     max-width: 100%;
     height: auto;
   }
 }
 
-button{
+button {
   cursor: pointer;
 }
 
-header{
+header {
   padding: 20px 0;
   background: #fff;
   display: flex;
@@ -29,51 +29,86 @@ header{
   align-items: center;
 }
 
-.container{
+.container {
   @include grid-container;
 }
 
-.logo{
+.logo {
   margin-top: 0;
   margin-bottom: 0;
   @include grid-column(3);
   @include grid-push(1);
 
-  @include grid-media($grid-lg){
+  @include grid-media($grid-lg) {
     @include grid-column(3);
     @include grid-push(2);
   }
 
-  @include grid-media($grid-sm){
+  @include grid-media($grid-sm) {
     @include grid-column(3);
     @include grid-push(0);
   }
 
-  @include grid-media($grid-xs){
+  @include grid-media($grid-xs) {
     @include grid-column(3);
     @include grid-push(0);
   }
 
-  a{
+  a {
     @include imgreplace;
-    background:url(img/logo.svg) top left no-repeat;
+    background: url(img/logo.svg) top left no-repeat;
     background-size: contain;
     width: 240px;
     height: 55px;
   }
 }
 
-.social{
+.navigation {
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .menu-item {
+    list-style: none;
+    font: $bold 1em $font;
+    margin-right: 20px;
+    position: relative;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.current-menu-item {
+      &:after {
+        content: "";
+        top: calc(100% + 10px);
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        background: linear-gradient(to right, $yellow, $orange);
+      }
+    }
+
+    & > a {
+      color: $darkBlue;
+      text-decoration: none;
+    }
+  }
+}
+
+.social {
   @include grid-column(2);
   margin-right: 30px;
   text-align: right;
 
-  @include grid-media($grid-xs){
+  @include grid-media($grid-xs) {
     @include grid-column(1);
   }
 }
 
-.icon-linkedin{
+.icon-linkedin {
   @include imgreplace;
   width: 36px;
   height: 36px;
@@ -81,16 +116,16 @@ header{
   background-size: contain;
 }
 
-footer{
+footer {
   padding: 80px 0;
   background-image: linear-gradient(to right, $darkBlue, $lightBlue);
 
-  @include grid-media($grid-xs){
+  @include grid-media($grid-xs) {
     display: none;
   }
 }
 
-.footer-logo{
+.footer-logo {
   @include grid-column(3);
   @include imgreplace;
   background: url(img/logo_white.svg) top left no-repeat;
@@ -98,12 +133,12 @@ footer{
   width: 200px;
   height: 45px;
 
-  @include grid-media($grid-lg){
+  @include grid-media($grid-lg) {
     @include grid-column(3);
     @include grid-push(1);
   }
 
-  @include grid-media($grid-sm){
+  @include grid-media($grid-sm) {
     @include grid-column(4);
     @include grid-push(2);
     background-position: center;
@@ -111,17 +146,17 @@ footer{
   }
 }
 
-.footer-menu{
+.footer-menu {
   @include grid-column(5);
 
-  @include grid-media($grid-lg){
+  @include grid-media($grid-lg) {
     @include grid-column(5);
   }
 
   text-align: center;
   color: #fff;
 
-  @include grid-media($grid-sm){
+  @include grid-media($grid-sm) {
     @include grid-column(8);
     margin-top: 40px;
     margin-bottom: 40px;
@@ -133,18 +168,18 @@ footer{
   }
 }
 
-.footer-contact{
+.footer-contact {
   @include grid-column(4);
   margin-bottom: 40px;
   margin-top: 0;
   padding: 0;
   font-size: 0.9em;
 
-  @include grid-media($grid-lg){
+  @include grid-media($grid-lg) {
     @include grid-column(4);
   }
 
-  @include grid-media($grid-sm){
+  @include grid-media($grid-sm) {
     display: none;
   }
 }
@@ -155,7 +190,7 @@ footer{
   color: #fff;
   margin-bottom: 20px;
 
-  & > i{
+  & > i {
     width: 20px;
     height: 20px;
     margin-top: 5px;
@@ -173,123 +208,135 @@ footer{
   }
 }
 
-.contactIcon-phone{ background-image: url(img/iconPhone.svg);}
-.contactIcon-email{ background-image: url(img/iconEmail.svg);}
-.contactIcon-address{ background-image: url(img/iconLocation.svg);}
+.contactIcon-phone {
+  background-image: url(img/iconPhone.svg);
+}
+.contactIcon-email {
+  background-image: url(img/iconEmail.svg);
+}
+.contactIcon-address {
+  background-image: url(img/iconLocation.svg);
+}
 
-.patria{
+.patria {
   text-align: center;
   @include grid-column(6);
   @include grid-push(3);
   margin-top: 30px;
   margin-bottom: 30px;
 
-  img{
+  img {
     max-width: 350px;
     height: auto;
   }
 }
 
-.copyright{
+.copyright {
   @include grid-column(5);
   @include grid-push(1);
   color: #fff;
 
-  @include grid-media($grid-lg){
+  @include grid-media($grid-lg) {
     @include grid-column(5);
     @include grid-push(2);
   }
 
-  @include grid-media($grid-sm){
+  @include grid-media($grid-sm) {
     @include grid-column(6);
     @include grid-push(1);
     text-align: center;
     margin-bottom: 40px;
   }
 
-  p{ margin-bottom: 0; }
+  p {
+    margin-bottom: 0;
+  }
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg) }
-  to { transform: rotate(360deg) }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.signature{
+.signature {
   @include grid-column(5);
   text-align: right;
 
-  @include grid-media($grid-lg){
+  @include grid-media($grid-lg) {
     @include grid-column(6);
   }
 
-  @include grid-media($grid-sm){
+  @include grid-media($grid-sm) {
     @include grid-column(6);
     @include grid-push(1);
     text-align: center;
   }
 
-  a{
+  a {
     @include imgreplace;
     background: url(img/maquinario.svg) center no-repeat;
     background-size: contain;
     width: 25px;
     height: 25px;
 
-    &:hover{
+    &:hover {
       animation: spin infinite linear 2s;
     }
   }
 }
 
-.page{
+.page {
   padding: 80px 0;
 }
 
-.page-content{
+.page-content {
   @include grid-column(8);
   @include grid-push(2);
 
-  @include grid-media($grid-lg){
+  @include grid-media($grid-lg) {
     @include grid-column(10);
     @include grid-push(2);
   }
 
-  @include grid-media($grid-sm){
+  @include grid-media($grid-sm) {
     @include grid-column(8);
     @include grid-push(0);
   }
 
-  @include grid-media($grid-xs){
+  @include grid-media($grid-xs) {
     @include grid-column(4);
     @include grid-push(0);
   }
 }
 
-.page-title{
+.page-title {
   @include title;
   margin: 0 0 40px;
 }
 
-.page-text{
+.page-text {
   @include paragraph;
 
-  .wp-block-separator{
+  .wp-block-separator {
     margin: 50px 0;
     border: 0;
     border-bottom: solid 1px $lightBlue;
   }
 
-  h3:not(:first-child){
+  h3:not(:first-child) {
     margin-top: 40px;
     color: $darkBlue;
   }
 
-  a[href^="http"]{
+  a[href^="http"] {
     color: $darkBlue;
   }
 
-  a[href$=".pdf"]{
+  a[href$=".pdf"] {
     color: $darkBlue;
     padding: 10px 20px;
     font: $bold 0.9em $font;
@@ -300,8 +347,8 @@ footer{
     margin-bottom: 10px;
     display: inline-flex;
 
-    &:before{
-      content: '';
+    &:before {
+      content: "";
       background: url(img/iconPdf-lightBlue.svg) top center no-repeat;
       background-size: contain;
       width: 25px;
