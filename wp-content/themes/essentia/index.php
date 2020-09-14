@@ -123,18 +123,18 @@ if (have_posts()): ?>
           $projectCategories = new CategoryParse(
             get_the_category($project->ID)
           ); ?>
-          <div class="projectHome-item">
-            <div class="projectHome-content">
-              <span class="projectHome-label"><?= $projectCategories->returnCategoriesAsText() ?></span>
-              <h3 class="projectHome-title"><?= get_the_title(
+          <div class="projectHome-item cardProject">
+            <div class="cardProject-content">
+              <span class="cardProject-label"><?= $projectCategories->returnCategoriesAsText() ?></span>
+              <h3 class="cardProject-title"><?= get_the_title(
                 $project->ID
               ) ?></h3>
-              <span class="projectHome-location"><?= get_field(
+              <span class="cardProject-location"><?= get_field(
                 'location',
                 $project->ID
               ) ?></span>
             </div>
-            <figure class="projectHome-thumb">
+            <figure class="cardProject-thumb">
               <img src="<?= get_the_post_thumbnail_url($project->ID) ?>" alt="">
             </figure>
           </div>
