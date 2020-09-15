@@ -2,7 +2,7 @@
   <div class="container">
     <h2 class="footer-logo"><?php bloginfo('name'); ?></h2>
     <nav class="footer-menu">
-      <a href="<?= site_url(); ?>/etica-e-integridade">Ética e Integridade</a>
+      <a href="<?= site_url() ?>/etica-e-integridade">Ética e Integridade</a>
     </nav>
     <ul class="footer-contact">
       <li class="footer-contactInfo contact-phone">
@@ -16,15 +16,19 @@
       <li class="footer-contactInfo contact-address">
         <i class="contactIcon-address"></i>
         <?php $address = get_field('address', 'option'); ?>
-        <p><?= $address['street']; ?><br>
-        <?= $address['address_detail']; ?><br>
-        <?= $address['neighborhood']; ?>, <?= $address['city']; ?> - <?= $address['state']; ?><br>
-        CEP <?= $address['zipcode']; ?></p>
+        <p><?= $address['street'] ?><br>
+        <?= $address['address_detail'] ?><br>
+        <?= $address['neighborhood'] ?>, <?= $address['city'] ?> - <?= $address[
+   'state'
+ ] ?><br>
+        CEP <?= $address['zipcode'] ?></p>
       </li>
     </ul>
 
     <div class="patria">
-      <img src="<?php bloginfo('template_url'); ?>/img/patria-blackstone.png" alt="Pátria - in partnership with Blackstone">
+      <img src="<?php bloginfo(
+        'template_url'
+      ); ?>/img/patria-blackstone.png" alt="Pátria - in partnership with Blackstone">
     </div>
 
     <div class="copyright">
@@ -37,7 +41,7 @@
   </div>
 </footer>
 
-
+<script src="<?php bloginfo('template_directory'); ?>/js/script.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-30834803-39"></script>
 <script>

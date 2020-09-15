@@ -19,13 +19,19 @@
   </h1>
   <nav class="navigation">
     <?php wp_nav_menu(['menu' => 'navigation']); ?>
+    <nav class="social">
+      <?php
+      $linkedin = get_field('linkedin', 'option');
+      if (
+        $linkedin
+      ): ?><a href="<?= $linkedin ?>" target="_blank" class="icon-linkedin" rel="noreferrer noopener">Linkedin</a><?php endif;
+      ?>
+    </nav>
   </nav>
-  <nav class="social">
-    <?php
-    $linkedin = get_field('linkedin', 'option');
-    if (
-      $linkedin
-    ): ?><a href="<?= $linkedin ?>" target="_blank" class="icon-linkedin" rel="noreferrer noopener">Linkedin</a><?php endif;
-    ?>
-  </nav>
+  <a href="javascript:;" class="toggleMenu">
+    <span class="dash1"></span>
+    <span class="dash2"></span>
+    <span class="dash3"></span>
+    Menu
+  </a>
 </header>

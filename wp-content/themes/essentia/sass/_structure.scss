@@ -67,9 +67,37 @@ header {
 
 .navigation {
   @include grid-column(7);
+  display: flex;
+  align-items: center;
 
   @include grid-media($grid-sm) {
     @include grid-column(6);
+  }
+
+  @include grid-media($grid-xs) {
+    width: 100%;
+    top: 110px;
+    left: 0;
+    position: absolute;
+    display: flex;
+    height: 0;
+    background: #fff;
+    z-index: 9;
+    margin: 0;
+    flex-direction: column;
+    transition: all 0.5s;
+    overflow: hidden;
+
+    &.active {
+      display: flex;
+      height: calc(100vh - 110px);
+      padding: 30px 30px 80px 30px;
+    }
+
+    .menu-navigation-container {
+      flex: 1;
+      display: flex;
+    }
   }
 
   .menu {
@@ -77,6 +105,15 @@ header {
     flex-wrap: wrap;
     padding: 0;
     margin: 0;
+
+    @include grid-media($grid-xs) {
+      width: 100%;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   .menu-item {
@@ -85,13 +122,22 @@ header {
     margin-right: 20px;
     position: relative;
 
+    @include grid-media($grid-xs) {
+      margin-bottom: 30px;
+      font: 1.8em $font;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
     &:last-child {
       margin-right: 0;
     }
 
     &.current-menu-item {
       &:after {
-        content: "";
+        content: '';
         top: calc(100% + 10px);
         height: 2px;
         width: 100%;
@@ -108,13 +154,72 @@ header {
   }
 }
 
+.toggleMenu {
+  @include imgreplace;
+  display: none;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin-right: 30px;
+
+  @include grid-media($grid-xs) {
+    display: block;
+  }
+
+  .dash1,
+  .dash2,
+  .dash3 {
+    width: 100%;
+    height: 4px;
+    border-radius: 25px;
+    background: $lightBlue;
+    position: absolute;
+    transition: all 0.5s;
+  }
+
+  .dash1 {
+    top: 0;
+    left: 0;
+    transform-origin: bottom left;
+  }
+
+  .dash2 {
+    top: 50%;
+    margin-top: -2px;
+    left: 0;
+  }
+
+  .dash3 {
+    bottom: 0;
+    left: 0;
+    transform-origin: top left;
+  }
+
+  &.active {
+    .dash1 {
+      transform: rotate(45deg);
+      width: 35px;
+    }
+    .dash3 {
+      transform: rotate(-45deg);
+      width: 35px;
+    }
+    .dash2 {
+      width: 0;
+    }
+  }
+}
+
 .social {
   @include grid-column(1);
   margin-right: 30px;
   text-align: right;
 
   @include grid-media($grid-xs) {
-    @include grid-column(1);
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 0;
   }
 
   @include grid-media($grid-sm) {
@@ -346,11 +451,11 @@ footer {
     color: $darkBlue;
   }
 
-  a[href^="http"] {
+  a[href^='http'] {
     color: $darkBlue;
   }
 
-  a[href$=".pdf"] {
+  a[href$='.pdf'] {
     color: $darkBlue;
     padding: 10px 20px;
     font: $bold 0.9em $font;
@@ -362,7 +467,7 @@ footer {
     display: inline-flex;
 
     &:before {
-      content: "";
+      content: '';
       background: url(img/iconPdf-lightBlue.svg) top center no-repeat;
       background-size: contain;
       width: 25px;
