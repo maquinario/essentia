@@ -47,6 +47,10 @@ header {
     @include grid-push(1);
   }
 
+  @include grid-media($grid-xl) {
+    @include grid-push(2);
+  }
+
   @include grid-media($grid-sm) {
     @include grid-column(8);
     @include grid-push(0);
@@ -83,6 +87,10 @@ header {
 
   @include grid-media($grid-sm) {
     @include grid-column(8);
+  }
+
+  @include grid-media($grid-lg) {
+    @include grid-column(7);
   }
 
   @include grid-media($grid-xs) {

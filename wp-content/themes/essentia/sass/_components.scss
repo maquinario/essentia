@@ -161,8 +161,13 @@
   position: relative;
   z-index: 9;
 
+  @include grid-media($grid-lg) {
+    @include grid-push(1);
+  }
+
   @include grid-media($grid-xl) {
     padding: 160px 0;
+    @include grid-push(2);
   }
 
   @include grid-media($grid-sm) {

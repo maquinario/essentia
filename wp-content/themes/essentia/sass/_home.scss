@@ -23,7 +23,7 @@
 .bannerHome-title {
   @include grid-column(6);
   @include grid-push(1);
-  font-size: 3em;
+  font-size: 2.6em;
   color: $darkBlue;
   margin-bottom: 20%;
   position: relative;
@@ -31,6 +31,10 @@
 
   @include grid-media($grid-lg) {
     @include grid-column(6);
+    @include grid-push(1);
+  }
+
+  @include grid-media($grid-xl) {
     @include grid-push(2);
   }
 
