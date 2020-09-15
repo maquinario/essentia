@@ -27,6 +27,10 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+
+  @include grid-media($grid-xs) {
+    height: 110px;
+  }
 }
 
 .container {
@@ -82,7 +86,7 @@ header {
     display: flex;
     height: 0;
     background: #fff;
-    z-index: 9;
+    z-index: 999;
     margin: 0;
     flex-direction: column;
     transition: all 0.5s;

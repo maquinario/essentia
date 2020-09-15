@@ -7,6 +7,11 @@
 .benefits-items {
   @include grid-column(10);
   @include grid-push(1);
+
+  @include grid-media($grid-xs) {
+    @include grid-column(4);
+    @include grid-push(0);
+  }
 }
 
 .benefits-list {
@@ -21,6 +26,11 @@
 
     @include grid-media($grid-sm) {
       @include grid-column(8);
+      @include grid-push(0);
+    }
+
+    @include grid-media($grid-xs) {
+      @include grid-column(4);
       @include grid-push(0);
     }
   }
@@ -40,6 +50,11 @@
   @include grid-push(1);
   @include title;
   text-align: center;
+
+  @include grid-media($grid-xs) {
+    @include grid-column(4);
+    @include grid-push(0);
+  }
 }
 
 .sustainabilityActions-content {
@@ -49,6 +64,12 @@
 
   @include grid-media($grid-sm) {
     @include grid-column(8);
+    @include grid-push(0);
+    margin-bottom: 40px;
+  }
+
+  @include grid-media($grid-xs) {
+    @include grid-column(4);
     @include grid-push(0);
     margin-bottom: 40px;
   }
@@ -66,6 +87,13 @@
   @include grid-media($grid-sm) {
     @include grid-column(8);
     @include grid-push(0);
+  }
+
+  @include grid-media($grid-xs) {
+    padding: 30px 20px;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
   }
 
   ul {
@@ -93,6 +121,11 @@
     @include grid-column(6);
     @include grid-push(1);
   }
+
+  @include grid-media($grid-xs) {
+    @include grid-column(4);
+    @include grid-push(0);
+  }
 }
 
 .textBlock-content {
@@ -103,5 +136,10 @@
   @include grid-media($grid-sm) {
     @include grid-column(6);
     @include grid-push(1);
+  }
+
+  @include grid-media($grid-xs) {
+    @include grid-column(4);
+    @include grid-push(0);
   }
 }

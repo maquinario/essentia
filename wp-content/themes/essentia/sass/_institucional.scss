@@ -7,6 +7,10 @@
 .aboutChildren-items {
   @include grid-column(10);
   @include grid-push(1);
+
+  @include grid-media($grid-xs) {
+    @include grid-column(4);
+  }
 }
 
 .aboutChildren-list {
@@ -23,6 +27,10 @@
 
     @include grid-media($grid-sm) {
       @include grid-column(6 of 6);
+    }
+
+    @include grid-media($grid-xs) {
+      @include grid-column(4);
     }
   }
 }

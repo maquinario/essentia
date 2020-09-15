@@ -61,7 +61,7 @@
   }
 
   &:after {
-    content: "";
+    content: '';
     background-image: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 1),
@@ -157,7 +157,7 @@
   right: 0;
   width: 70%;
   z-index: 0;
-  @include imageClip("img/shapeHome.svg");
+  @include imageClip('img/shapeHome.svg');
   mask-size: contain;
   -webkit-mask-size: contain;
   -webkit-mask-position: bottom right;
@@ -354,7 +354,7 @@
   }
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     width: 50%;
     height: 900px;
@@ -424,8 +424,16 @@
   .cardProject {
     @include grid-column(5 of 7);
 
+    @include grid-media($grid-xs) {
+      @include grid-column(4);
+    }
+
     &:nth-child(odd) {
       @include grid-push(2 of 7);
+
+      @include grid-media($grid-xs) {
+        @include grid-push(0);
+      }
     }
   }
 }
