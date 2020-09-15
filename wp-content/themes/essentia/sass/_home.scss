@@ -96,6 +96,10 @@
   @include grid-media($grid-sm) {
     padding-bottom: 40px;
   }
+
+  .container {
+    display: flex;
+  }
 }
 
 .sustainabilityHome-content {
@@ -147,6 +151,15 @@
 
   @include grid-media($grid-xs) {
     display: none;
+  }
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
   }
 }
 

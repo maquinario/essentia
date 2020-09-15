@@ -161,6 +161,10 @@
   position: relative;
   z-index: 9;
 
+  @include grid-media($grid-xl) {
+    padding: 160px 0;
+  }
+
   @include grid-media($grid-sm) {
     @include grid-column(8);
     @include grid-push(0);
@@ -216,6 +220,9 @@
     height: 100%;
     position: relative;
     @include imageClip('img/pageBanner-shape.svg');
+    -webkit-mask-position: top right;
+    mask-position: top right;
+    object-fit: cover;
 
     @include grid-media($grid-sm) {
       width: 100%;

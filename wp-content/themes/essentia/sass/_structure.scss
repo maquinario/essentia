@@ -25,7 +25,6 @@ header {
   background: #fff;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
 
   @include grid-media($grid-xs) {
@@ -41,6 +40,12 @@ header {
   margin-top: 0;
   margin-bottom: 0;
   @include grid-column(3);
+  @include grid-push(1);
+
+  @include grid-media($grid-lg) {
+    @include grid-column(3);
+    @include grid-push(1);
+  }
 
   @include grid-media($grid-sm) {
     @include grid-column(8);
@@ -55,10 +60,11 @@ header {
 
   a {
     @include imgreplace;
-    background: url(img/logo.svg) top left no-repeat;
+    background: url(img/logo.svg) center left no-repeat;
     background-size: contain;
     width: 240px;
     height: 55px;
+    max-width: 100%;
 
     @include grid-media($grid-sm) {
       margin: 0 auto;
@@ -72,10 +78,11 @@ header {
 .navigation {
   @include grid-column(7);
   display: flex;
+  justify-content: flex-end;
   align-items: center;
 
   @include grid-media($grid-sm) {
-    @include grid-column(6);
+    @include grid-column(8);
   }
 
   @include grid-media($grid-xs) {
@@ -164,7 +171,7 @@ header {
   width: 30px;
   height: 30px;
   position: relative;
-  margin-right: 30px;
+  margin: 0 30px;
 
   @include grid-media($grid-xs) {
     display: block;
